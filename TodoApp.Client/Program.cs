@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using TodoApp.Client;
 using TodoApp.Client.HttpRepository;
 using TodoApp.Client.HttpRepository.Interfaces;
+using TodoApp.Client.Services;
+using TodoApp.Client.Services.Interfaces;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -17,5 +19,6 @@ builder.Services.AddHttpClient("TodoAppAPI", client =>
 builder.Services.AddScoped(sp => sp.GetService<IHttpClientFactory>().CreateClient("TodoAppAPI"));
 
 builder.Services.AddScoped<ITaskRepository, TaskRepository>();
+builder.Services.AddScoped<IToastrService, ToastrService>();
 
 await builder.Build().RunAsync();
