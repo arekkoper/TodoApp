@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Components;
 using TodoApp.Client.HttpRepository.Interfaces;
+using TodoApp.Client.Services.Interfaces;
 using TodoApp.Shared.Tasks.Commands;
 
 namespace TodoApp.Client.Pages
@@ -12,6 +13,7 @@ namespace TodoApp.Client.Pages
 
         [Inject] public ITaskRepository TaskRepository { get; set; }
         [Inject] public NavigationManager NavigationManager { get; set; }
+        [Inject] public IToastrService ToastrService { get; set; }
 
         private async Task Save()
         {
@@ -22,6 +24,8 @@ namespace TodoApp.Client.Pages
                 await TaskRepository.Add(_task);
 
                 NavigationManager.NavigateTo("/");
+
+                await ToastrService.ShowSuccessMessage("You added a new task!");
             }
             finally
             {
