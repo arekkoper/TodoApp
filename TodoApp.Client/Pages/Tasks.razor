@@ -1,0 +1,43 @@
+﻿@page "/"
+
+<PageTitle>My tasks</PageTitle>
+
+<h1>My tasks</h1>
+
+@if (_tasks == null)
+{
+    <div>Tasks loading...</div>
+}
+else if (!_tasks.Any())
+{
+    <div>There is no tasks to do!</div>
+}
+else
+{
+    <table class="table table-responsive text-center align-middle my-5">
+        <thead class="table-light">
+            <tr>
+                <th width="25%">Title</th>
+                <th width="25%">Deadline</th>
+                <th width="25%">Is Executed?</th>
+                <th width="25%">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in _tasks)
+            {
+                <tr>
+                    <td>
+                        <a href="/task/edit/@item.Id" class="fw-bold link-primary link">@item.Title</a>
+                    </td>
+                    <td>@(item.Term.HasValue ? item.Term.Value.ToString("dd-MM-yyyy") : "-")</td>
+                    <td>@(item.IsExecuted ? (MarkupString)"<span class='badge bg-success rounded-pill'>YES</span>" : (MarkupString)"<span class='badge bg-danger rounded-pill'>NO</span>")</td>
+                    <td>
+                        <a href="/task/edit/@item.Id" class="btn btn-waring btn-sm me-2 my-1">Edit</a>
+                        <button type="button" class="btn btn-danger btn-sm my-1">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
