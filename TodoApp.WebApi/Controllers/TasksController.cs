@@ -56,7 +56,7 @@ namespace TodoApp.WebApi.Controllers
         {
             var file = Request.Form.Files.FirstOrDefault();
 
-            if (file != null)
+            if (file == null)
             {
                 return BadRequest();
             }

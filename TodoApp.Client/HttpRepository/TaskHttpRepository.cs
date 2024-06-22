@@ -1,4 +1,5 @@
-﻿using System.Net.Http.Json;
+﻿using Microsoft.AspNetCore.Components.Forms;
+using System.Net.Http.Json;
 using TodoApp.Client.HttpRepository.Interfaces;
 using TodoApp.Shared.Tasks.Commands;
 using TodoApp.Shared.Tasks.Dtos;
@@ -20,5 +21,13 @@ namespace TodoApp.Client.HttpRepository
         public async Task<IList<TaskDto>> GetAll() => await _client.GetFromJsonAsync<IList<TaskDto>>("tasks");
         public async Task<EditTaskCommand> GetEdit(int id) => await _client.GetFromJsonAsync<EditTaskCommand>($"tasks/edit/{id}");
 
+        public async Task UploadImage(IBrowserFile file)
+        {
+            var content = new MultipartFormDataContent();
+
+            content.Add(new StreamContent(file.OpenReadStream(file.Size)), "image", file.Name);
+
+            await _client.PostAsync("tasks/upload-image", content);
+        }
     }
 }
