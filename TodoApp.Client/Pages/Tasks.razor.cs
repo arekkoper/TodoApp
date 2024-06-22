@@ -10,7 +10,6 @@ namespace TodoApp.Client.Pages
     {
         private IList<TaskDto> _tasks;
         private bool _showDeleteDialog;
-        //private string _deleteDialogBody;
         private MarkupString _deleteDialogBody;
         private int _deleteTaskId;
 

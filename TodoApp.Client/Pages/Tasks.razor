@@ -29,8 +29,7 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in _tasks)
-            {
+            <Virtualize Items="_tasks" Context="item" SpacerElement="tr">
                 <tr>
                     <td>
                         <a href="/task/edit/@item.Id" class="fw-bold link-primary link">@item.Title</a>
@@ -42,7 +41,7 @@ else
                         <button @onclick="() => DeleteTask(item.Id, item.Title)" type="button" class="btn btn-danger btn-sm my-1">Delete</button>
                     </td>
                 </tr>
-            }
+            </Virtualize>
         </tbody>
     </table>
 }
