@@ -18,7 +18,7 @@ builder.Services.AddHttpClient("TodoAppAPI", client =>
 
 builder.Services.AddScoped(sp => sp.GetService<IHttpClientFactory>().CreateClient("TodoAppAPI"));
 
-builder.Services.AddScoped<ITaskRepository, TaskRepository>();
+builder.Services.AddScoped<ITaskHttpRepository, TaskHttpRepository>();
 builder.Services.AddScoped<IToastrService, ToastrService>();
 
 await builder.Build().RunAsync();

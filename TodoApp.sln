@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoApp.Client", "TodoApp.Client\TodoApp.Client.csproj", "{99FA9E07-44AB-4266-91C0-BA193DAEBBD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.Client", "TodoApp.Client\TodoApp.Client.csproj", "{99FA9E07-44AB-4266-91C0-BA193DAEBBD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoApp.Application", "TodoApp.Application\TodoApp.Application.csproj", "{FD172F15-6AAC-42DE-8511-DFE90829884B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.Application", "TodoApp.Application\TodoApp.Application.csproj", "{FD172F15-6AAC-42DE-8511-DFE90829884B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoApp.Domain", "TodoApp.Domain\TodoApp.Domain.csproj", "{4D37F9AD-6123-42F0-B2DD-46474BFBB445}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.Domain", "TodoApp.Domain\TodoApp.Domain.csproj", "{4D37F9AD-6123-42F0-B2DD-46474BFBB445}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoApp.Infrastructure", "TodoApp.Infrastructure\TodoApp.Infrastructure.csproj", "{F691C0F5-8915-423B-B4AA-22B7BB69DF6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.Infrastructure", "TodoApp.Infrastructure\TodoApp.Infrastructure.csproj", "{F691C0F5-8915-423B-B4AA-22B7BB69DF6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoApp.Shared", "TodoApp.Shared\TodoApp.Shared.csproj", "{C6BC0E01-0ADD-4ADD-B3CA-54BF6BA04F8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.Shared", "TodoApp.Shared\TodoApp.Shared.csproj", "{C6BC0E01-0ADD-4ADD-B3CA-54BF6BA04F8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoApp.WebApi", "TodoApp.WebApi\TodoApp.WebApi.csproj", "{398F0122-4955-434C-B987-0BC74DE7C444}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.WebApi", "TodoApp.WebApi\TodoApp.WebApi.csproj", "{398F0122-4955-434C-B987-0BC74DE7C444}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

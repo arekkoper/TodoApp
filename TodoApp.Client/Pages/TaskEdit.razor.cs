@@ -5,15 +5,21 @@ using TodoApp.Shared.Tasks.Commands;
 
 namespace TodoApp.Client.Pages
 {
-    public partial class TaskAdd
+    public partial class TaskEdit
     {
-        private bool _isLoading = false;
+        [Parameter] public int Id { get; set; }
 
-        private AddTaskCommand _task = new AddTaskCommand() { Term = DateTime.Now };
+        private EditTaskCommand _task = new EditTaskCommand();
+        private bool _isLoading = false;
 
         [Inject] public ITaskHttpRepository TaskRepository { get; set; }
         [Inject] public NavigationManager NavigationManager { get; set; }
         [Inject] public IToastrService ToastrService { get; set; }
+
+        protected override async Task OnInitializedAsync()
+        {
+            _task = await TaskRepository.GetEdit(Id);
+        }
 
         private async Task Save()
         {
@@ -21,11 +27,12 @@ namespace TodoApp.Client.Pages
             {
                 _isLoading = true;
 
-                await TaskRepository.Add(_task);
+                await TaskRepository.Edit(_task);
 
                 NavigationManager.NavigateTo("/");
 
-                await ToastrService.ShowSuccessMessage("You added a new task!");
+                await ToastrService.ShowSuccessMessage("Task was edited");
+
             }
             finally
             {

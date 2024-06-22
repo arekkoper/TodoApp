@@ -33,7 +33,7 @@ else
                     <td>@(item.Term.HasValue ? item.Term.Value.ToString("dd-MM-yyyy") : "-")</td>
                     <td>@(item.IsExecuted ? (MarkupString)"<span class='badge bg-success rounded-pill'>YES</span>" : (MarkupString)"<span class='badge bg-danger rounded-pill'>NO</span>")</td>
                     <td>
-                        <a href="/task/edit/@item.Id" class="btn btn-waring btn-sm me-2 my-1">Edit</a>
+                        <a href="/task/edit/@item.Id" class="btn btn-warning btn-sm me-2 my-1">Edit</a>
                         <button type="button" class="btn btn-danger btn-sm my-1">Delete</button>
                     </td>
                 </tr>

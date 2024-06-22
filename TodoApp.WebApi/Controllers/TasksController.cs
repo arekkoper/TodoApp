@@ -13,7 +13,7 @@ namespace TodoApp.WebApi.Controllers
         {
             var task = await Mediator.Send(new GetEditTaskQuery { Id = id });
 
-            if(task != null)
+            if(task == null)
             {
                 return NotFound();
             }

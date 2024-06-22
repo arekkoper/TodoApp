@@ -8,7 +8,7 @@ namespace TodoApp.Client.Pages
     {
         private IList<TaskDto> _tasks;
 
-        [Inject] public ITaskRepository TaskRepository { get; set; }
+        [Inject] public ITaskHttpRepository TaskRepository { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
