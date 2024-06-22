@@ -8,6 +8,7 @@ namespace TodoApp.Client.HttpRepository.Interfaces
     {
         Task Add(AddTaskCommand command);
         Task Edit(EditTaskCommand command);
+        Task Delete(int id);
         Task<IList<TaskDto>> GetAll();
         Task<EditTaskCommand> GetEdit(int id);
     }

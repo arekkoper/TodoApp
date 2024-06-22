@@ -2,6 +2,11 @@
 
 <PageTitle>My tasks</PageTitle>
 
+<Modal Show="_showDeleteDialog" OnAccept="DeleteConfirmed" OnCancel="DeleteCanceled">
+    <Title>Delete task</Title>
+    <Body>@_deleteDialogBody</Body>
+</Modal>
+
 <h1>My tasks</h1>
 
 @if (_tasks == null)
@@ -34,7 +39,7 @@ else
                     <td>@(item.IsExecuted ? (MarkupString)"<span class='badge bg-success rounded-pill'>YES</span>" : (MarkupString)"<span class='badge bg-danger rounded-pill'>NO</span>")</td>
                     <td>
                         <a href="/task/edit/@item.Id" class="btn btn-warning btn-sm me-2 my-1">Edit</a>
-                        <button type="button" class="btn btn-danger btn-sm my-1">Delete</button>
+                        <button @onclick="() => DeleteTask(item.Id, item.Title)" type="button" class="btn btn-danger btn-sm my-1">Delete</button>
                     </td>
                 </tr>
             }

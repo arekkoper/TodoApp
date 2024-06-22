@@ -15,6 +15,7 @@ namespace TodoApp.Client.HttpRepository
         }
 
         public async Task Add(AddTaskCommand command) => await _client.PostAsJsonAsync("tasks", command);
+        public async Task Delete(int id) => await _client.DeleteAsync($"tasks/{id}");
         public async Task Edit(EditTaskCommand command) => await _client.PutAsJsonAsync("tasks", command);
         public async Task<IList<TaskDto>> GetAll() => await _client.GetFromJsonAsync<IList<TaskDto>>("tasks");
         public async Task<EditTaskCommand> GetEdit(int id) => await _client.GetFromJsonAsync<EditTaskCommand>($"tasks/edit/{id}");
